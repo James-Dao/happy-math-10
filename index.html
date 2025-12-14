@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>快乐数学 1-10</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'candy-red': '#FF6B6B',
+              'candy-blue': '#4ECDC4',
+              'candy-yellow': '#FFE66D',
+              'candy-green': '#95E1D3',
+              'paper': '#F7F9F9',
+            },
+            fontFamily: {
+              sans: ['"Comic Sans MS"', '"Chalkboard SE"', 'sans-serif'],
+            },
+            animation: {
+              'bounce-short': 'bounce 0.5s ease-in-out 2',
+              'wiggle': 'wiggle 0.5s ease-in-out infinite',
+              'pop': 'pop 0.3s ease-out',
+              'fall': 'fall 2.5s linear forwards',
+              'float': 'float 3s ease-in-out infinite',
+              'teach-scale': 'teachScale 0.4s ease-out forwards',
+              'teach-fade': 'teachFade 0.5s ease-out forwards',
+            },
+            keyframes: {
+              wiggle: {
+                '0%, 100%': { transform: 'rotate(-3deg)' },
+                '50%': { transform: 'rotate(3deg)' },
+              },
+              pop: {
+                '0%': { transform: 'scale(0.8)', opacity: 0 },
+                '100%': { transform: 'scale(1)', opacity: 1 },
+              },
+              fall: {
+                '0%': { transform: 'translateY(-10vh) rotate(0deg)', opacity: '1' },
+                '100%': { transform: 'translateY(100vh) rotate(720deg)', opacity: '0' }
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              teachScale: {
+                '0%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(1.5)', color: '#FF6B6B' },
+                '100%': { transform: 'scale(1)' }
+              },
+              teachFade: {
+                '0%': { opacity: 1, transform: 'scale(1)' },
+                '100%': { opacity: 0.2, transform: 'scale(0.5) rotate(45deg)' }
+              }
+            }
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+  <body class="bg-paper text-slate-800 antialiased selection:bg-candy-yellow selection:text-black">
+    <div id="root"></div>
+  </body>
+</html>
